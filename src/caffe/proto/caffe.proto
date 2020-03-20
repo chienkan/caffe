@@ -409,6 +409,7 @@ message LayerParameter {
   // Supported by NNIE
   optional ROIPoolingParameter roi_pooling_param = 100000;
   optional NormalizeParameter norm_param = 100001;
+  optional PSROIPoolingParameter psroi_pooling_param = 100002;
 }
 
 // Message that stores parameters used to apply transformation
@@ -1435,4 +1436,10 @@ message NormalizeParameter {
   optional bool channel_shared = 3 [default = true];
   // Epsilon for not dividing by zero while normalizing variance
   optional float eps = 4 [default = 1e-10];
+}
+
+message PSROIPoolingParameter {
+  required float spatial_scale = 1; 
+  required int32 output_dim = 2; // output channel number
+  required int32 group_size = 3; // equal to pooled_size
 }
