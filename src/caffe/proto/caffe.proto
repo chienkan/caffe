@@ -411,6 +411,9 @@ message LayerParameter {
   optional NormalizeParameter norm_param = 100001;
   optional PSROIPoolingParameter psroi_pooling_param = 100002;
   optional UpsampleParameter upsample_param = 100003;
+//  optional PassThroughParamter pass_through_param = 100004;
+//  optional MatMulParameter matmul_param = 100005;
+  optional PermuteParameter permute_param = 100006;
 }
 
 // Message that stores parameters used to apply transformation
@@ -1463,4 +1466,26 @@ message UpsampleParameter {
   optional bool pad_out_w = 5 [default = false];
   optional uint32 upsample_h = 6;
   optional uint32 upsample_w = 7;
+}
+
+//// Message that stores parameters used by PassThroughLayer
+//message PassThroughParamter {
+//  // the number of channels in output feature map
+//  optional uint32 num_output = 1 [default = 0];
+//  // size of the spatial window block
+//  optional uint32 block_height = 2 [default = 0];
+//  optional uint32 block_width = 3 [default = 0];
+//}
+
+//message MatMulParameter {
+//  optional uint32 dim_1 = 1; // row of input matrix one
+//  optional uint32 dim_2 = 2; // column of input matrix one and row of input matrix two
+//  optional uint32 dim_3 = 3; // column of input matrix two
+//}
+
+message PermuteParameter {
+  // The new orders of the axes of data. Notice it should be with
+  // in the same range as the input data, and it starts from 0.
+  // Do not provide repeated order.
+  repeated uint32 order = 1;
 }
