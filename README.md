@@ -1,3 +1,16 @@
+# Overview
+Add ROIPooling/Normalize/PSROIPooling/Upsample/Permute layers support based on caffe-1.0.
+## Reference
+ROIPooling: [https://github.com/rbgirshick/py-faster-rcnn.git](https://github.com/rbgirshick/py-faster-rcnn.git)
+
+Normalize: [https://github.com/weiliu89/caffe.git](https://github.com/weiliu89/caffe.git)
+
+PSROIPooling: [https://github.com/daijifeng001/caffe-rfcn.git](https://github.com/daijifeng001/caffe-rfcn.git)
+
+Upsample: [https://github.com/alexgkendall/caffe-segnet.git](https://github.com/alexgkendall/caffe-segnet.git)
+
+Permute: [https://github.com/weiliu89/caffe.git](https://github.com/weiliu89/caffe.git)
+
 # Caffe
 
 [![Build Status](https://travis-ci.org/BVLC/caffe.svg?branch=master)](https://travis-ci.org/BVLC/caffe)
